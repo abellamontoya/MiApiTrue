@@ -36,11 +36,11 @@ public class UserService {
     public User updateUser(Integer id, User user){
         Optional<User> optionalUser = userDAO.findById(id);
         if (optionalUser.isPresent()){
-            User existe = optionalUser.get();
-            existe.setFullName(user.getFullName());
-            existe.setPassword(user.getPassword());
-            existe.setEmail(user.getEmail());
-            return  userDAO.save(existe);
+            User exists = optionalUser.get();
+            exists.setFullName(user.getFullName());
+            exists.setPassword(user.getPassword());
+            exists.setEmail(user.getEmail());
+            return  userDAO.save(exists);
 
         }
         return null;
